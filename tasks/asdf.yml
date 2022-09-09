@@ -1,0 +1,2 @@
+- name: Install ASDF
+  command: brew install asdf

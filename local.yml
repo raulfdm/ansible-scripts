@@ -1,0 +1,9 @@
+- hosts: localhost
+  pre_tasks:
+    - name: Install xCode
+      command: xcode-select --install
+      ignore_errors: yes
+
+  tasks:
+    - include: tasks/zsh.yml
+    - include: tasks/asdf.yml

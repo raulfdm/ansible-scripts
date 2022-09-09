@@ -1,0 +1,22 @@
+- name: Install ZSH
+  command: brew install zsh
+  tags:
+    - zsh
+
+# - name: Make ZSH default shell
+#   shell: chsh -s /usr/local/bin/zsh
+#   tags:
+#     - zsh
+
+- name: Install Oh My ZSH
+  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  tags:
+    - zsh
+  ignore_errors: true
+
+- name: Install ohmyzsh Autocomplete
+  git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions"
+    dest: ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  tags:
+    - zsh
