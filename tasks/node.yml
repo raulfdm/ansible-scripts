@@ -1,0 +1,5 @@
+- name: Install Node with ASDF (LTS=>16)
+  command: asdf install nodejs lts
+
+- name: Define node global
+  command: asdf global nodejs lts
